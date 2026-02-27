@@ -1,0 +1,15 @@
+{
+  "name": "spec-dev-marketplace",
+  "owner": {
+    "name": "wjgogogo",
+    "url": "https://github.com/wjgogogo/spec-dev-skills.git"
+  },
+  "plugins": [
+    {
+      "name": "spec-dev",
+      "source": ".",
+      "description": "Spec-driven development workflow: write EARS specs, develop on branches/worktrees, review against specs",
+      "keywords": ["spec", "spec-driven", "ears", "requirements", "workflow", "development"]
+    }
+  ]
+}

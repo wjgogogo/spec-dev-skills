@@ -1,0 +1,15 @@
+{
+  "name": "spec-dev",
+  "version": "1.0.0",
+  "description": "Spec-driven development workflow: write specs first (EARS methodology), then develop on a dedicated branch, then review code against specs",
+  "author": {
+    "name": "wjgogogo",
+    "url": "https://github.com/wjgogogo/spec-dev-skills.git"
+  },
+  "repository": "https://github.com/wjgogogo/spec-dev-skills.git",
+  "license": "MIT",
+  "keywords": ["spec", "spec-driven", "ears", "requirements", "workflow", "development"],
+  "commands": "./commands/",
+  "agents": "./agents/",
+  "skills": "./skills/"
+}
