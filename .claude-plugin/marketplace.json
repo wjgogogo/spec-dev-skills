@@ -7,7 +7,7 @@
   "plugins": [
     {
       "name": "spec-dev",
-      "source": ".",
+      "source": "./",
       "description": "Spec-driven development workflow: write EARS specs, develop on branches/worktrees, review against specs",
       "keywords": ["spec", "spec-driven", "ears", "requirements", "workflow", "development"]
     }

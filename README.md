@@ -22,8 +22,7 @@
 ### 方式一：通过 Marketplace 安装 (推荐)
 在 Claude Code CLI 中直接执行：
 ```bash
-/plugin marketplace add github:wjgogogo/spec-dev-skills
-/plugin install spec-dev@spec-dev-marketplace
+/plugin marketplace add https://github.com/wjgogogo/spec-dev-skills.git
 ```
 
 ### 方式二：本地安装与测试开发
