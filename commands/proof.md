@@ -1,6 +1,6 @@
 ---
 description: 对指定文件进行文档润色优化，确保符合中文文档书写规范
-argument-hint: 文件路径（例如："README.md" 或 "docs/guide.md"）
+argument-hint: [可选] 文件路径（例如：`README.md` 或 `docs/guide.md`），省略时使用当前打开的文件
 ---
 
 # 文档润色
@@ -19,8 +19,10 @@ argument-hint: 文件路径（例如："README.md" 或 "docs/guide.md"）
 
 ## 阶段一：加载文件
 
+**初始参数**：$ARGUMENTS
+
 **操作**：
-1. 解析参数获取目标文件路径
+1. 解析参数：如果提供了参数则作为目标文件路径，否则使用当前打开的文件
 2. 读取文件完整内容
 3. 如果文件不存在或无法读取，向用户说明并停止
 
