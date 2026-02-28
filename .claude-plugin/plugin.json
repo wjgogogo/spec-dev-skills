@@ -10,6 +10,5 @@
   "license": "MIT",
   "keywords": ["spec", "spec-driven", "ears", "requirements", "workflow", "development"],
   "commands": "./commands/",
-  "agents": "./agents/",
   "skills": "./skills/"
 }

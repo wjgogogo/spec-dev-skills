@@ -1,3 +1,8 @@
+---
+name: task-template
+description: 实现计划模板文件
+---
+
 # 实现计划：[功能名称]
 
 > **来源规格**：`.claude/specs/[功能名称].md`
