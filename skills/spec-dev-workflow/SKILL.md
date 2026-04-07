@@ -1,6 +1,6 @@
 ---
 name: sd-workflow
-description: Spec 驱动开发工作流参考手册，说明 sd-write-spec、sd-dev、sd-review、sd-proof 四个 skills 的职责与衔接方式
+description: Spec 驱动开发工作流参考手册，说明 sd-brainstorm、sd-write-spec、sd-dev、sd-review、sd-proof 五个 skills 的职责与衔接方式
 ---
 
 # Spec 驱动开发（spec-dev）工作流
@@ -11,9 +11,25 @@ description: Spec 驱动开发工作流参考手册，说明 sd-write-spec、sd-
 
 > 先写规格，再写代码。先达成共识，再动手实现。
 
-## 四个核心技能
+## 五个核心技能
 
-### 1. `sd-write-spec`（制定规格）
+### 1. `sd-brainstorm`（需求澄清）
+当需求还模糊、边界不清、方案未定时，先用这个 skill 收敛问题空间。
+
+```
+请使用 sd-brainstorm skill，帮我一起梳理“团队知识库搜索”应该怎么做
+```
+
+**执行流程**：
+1. 先理解项目上下文和当前目标。
+2. 一次问一个关键问题，逐步澄清目标、参与者、边界和约束。
+3. 给出 2-3 个方案与推荐意见。
+4. 收束成一份可进入规格编写的设计共识。
+5. 确认后切换到 `sd-write-spec`。
+
+---
+
+### 2. `sd-write-spec`（制定规格）
 生成基于 EARS 方法论的需求规格文档。
 
 ```
@@ -27,7 +43,7 @@ description: Spec 驱动开发工作流参考手册，说明 sd-write-spec、sd-
 
 ---
 
-### 2. `sd-dev`（执行开发）
+### 3. `sd-dev`（执行开发）
 对照已有规格文档推进结构化开发，生成任务并编写代码。
 
 ```bash
@@ -49,7 +65,7 @@ description: Spec 驱动开发工作流参考手册，说明 sd-write-spec、sd-
 
 ---
 
-### 3. `sd-review`（安全核对与审查）
+### 4. `sd-review`（安全核对与审查）
 检查改动是否符合事前设定的规格与任务，以及代码本身的健壮性。
 
 ```
@@ -64,7 +80,7 @@ description: Spec 驱动开发工作流参考手册，说明 sd-write-spec、sd-
 
 ---
 
-### 4. `sd-proof`（文档润色）
+### 5. `sd-proof`（文档润色）
 对指定文档进行中文写作、排版与 Markdown 格式润色。
 
 ```
@@ -81,6 +97,8 @@ description: Spec 驱动开发工作流参考手册，说明 sd-write-spec、sd-
 ## 完整工作流示例
 
 ```
+请使用 sd-brainstorm skill，先梳理“添加暗黑模式”该覆盖哪些场景
+      ↓ 形成设计共识
 请使用 sd-write-spec skill，为“添加暗黑模式”写规格
       ↓ 生成 .claude/specs/add-dark-mode.md
 请使用 sd-dev skill，以 worktree 模式实现 add-dark-mode
