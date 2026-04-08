@@ -5,16 +5,15 @@
       "command": "npx",
       "args": [
         "-y",
-        "chrome-devtools-mcp"
+        "chrome-devtools-mcp@latest",
+        "--autoConnect",
+        "--no-usage-statistics"
       ]
     },
     "context7": {
       "type": "stdio",
       "command": "npx",
-      "args": [
-        "-y",
-        "@upstash/context7-mcp"
-      ]
-    } 
+      "args": ["-y", "@upstash/context7-mcp@latest"]
+    }
   }
 }

@@ -9,5 +9,5 @@
   "repository": "https://github.com/wjgogogo/spec-dev-skills.git",
   "license": "MIT",
   "keywords": ["spec", "spec-driven", "ears", "requirements", "workflow", "development", "debug", "review"],
-  "plugins": ["./spec", "./wj"]
+  "skills": "./skills/"
 }

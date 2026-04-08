@@ -1,0 +1,13 @@
+{
+  "name": "wj",
+  "version": "1.0.0",
+  "description": "General-purpose development skills: git commit, writing, handoff, diagramming, memo, image generation (cover, xhs, infographic)",
+  "author": {
+    "name": "wjgogogo",
+    "url": "https://github.com/wjgogogo/spec-dev-skills.git"
+  },
+  "repository": "https://github.com/wjgogogo/spec-dev-skills.git",
+  "license": "MIT",
+  "keywords": ["commit", "writing", "handoff", "memo", "excalidraw", "documentation", "imagine", "image", "cover", "xhs", "infographic"],
+  "skills": "./skills/"
+}

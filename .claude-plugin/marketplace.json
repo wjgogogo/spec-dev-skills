@@ -7,9 +7,15 @@
   "plugins": [
     {
       "name": "spec-dev",
-      "source": "./",
-      "description": "Spec-driven development workflow: write EARS specs, develop on branches/worktrees, review against specs",
-      "keywords": ["spec", "spec-driven", "ears", "requirements", "workflow", "development", "agile", "requirements-management"]
+      "source": "./spec",
+      "description": "Spec-driven development workflow: brainstorm requirements, write EARS specs, develop on branches/worktrees, review against specs, debug systematically",
+      "keywords": ["spec", "spec-driven", "ears", "requirements", "workflow", "development", "debug", "review"]
+    },
+    {
+      "name": "wj",
+      "source": "./wj",
+      "description": "General-purpose development skills: git commit, writing, handoff, diagramming, memo, image generation (cover, xhs, infographic)",
+      "keywords": ["commit", "writing", "handoff", "memo", "excalidraw", "documentation", "imagine", "image", "cover", "xhs", "infographic"]
     }
   ]
 }
