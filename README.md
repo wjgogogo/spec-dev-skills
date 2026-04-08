@@ -5,7 +5,6 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License"></a>
 </div>
 
-<br/>
 
 ## 为什么
 
@@ -15,6 +14,8 @@
 
 - **spec-dev** -- 规格驱动开发流程，强制引入一条轻量级的规范链条，让 AI 先想清楚再动手
 - **wj** -- 日常工程效率工具，覆盖提交、写作、画图、生图、交接等高频场景
+ 
+![Spec Dev Skills 架构图](./cover.png)
 
 ## Spec Dev Skills
 
