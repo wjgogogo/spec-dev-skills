@@ -36,7 +36,7 @@ async function readImageAsPart(filePath: string): Promise<InlineDataPart> {
   return {
     inlineData: {
       mimeType: getMimeType(filePath),
-       buf.toString("base64"),
+      data: buf.toString("base64"),
     },
   };
 }
@@ -60,27 +60,26 @@ export async function generateImage(
     imageParts.push(await readImageAsPart(refPath));
   }
 
-  const tools = [
-    {
-      googleSearch: {
-        searchTypes: {
-          imageSearch: {},
-        },
-      },
-    },
-  ];
-
+  // Gemini image generation API config
+  // ref: https://ai.google.dev/gemini-api/docs/image-generation
   const config: Record<string, unknown> = {
     thinkingConfig: {
       thinkingLevel: "MINIMAL",
     },
+    responseModalities: ["IMAGE"],
     imageConfig: {
       imageSize: mapImageSize(args.quality),
-      personGeneration: "",
       ...(args.aspectRatio ? { aspectRatio: args.aspectRatio } : {}),
     },
-    responseModalities: ["IMAGE"],
-    tools,
+    tools: [
+      {
+        googleSearch: {
+          searchTypes: {
+            imageSearch: {},
+          },
+        },
+      },
+    ],
   };
 
   const parts: Array<InlineDataPart | { text: string }> = [
