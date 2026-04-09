@@ -50,6 +50,14 @@
 
 ## 安装
 
+**前置依赖：**
+
+如需应用项目的 AGENTS.md（可选），需先安装 RTK 以支持其中的 shell 命令代理规则：
+
+```bash
+brew install rtk
+```
+
 **Claude Code：**
 
 ```bash

@@ -6,6 +6,7 @@
 
 - OpenAI Codex CLI
 - Git
+- RTK (`brew install rtk`) -- 可选，应用 AGENTS.md 时需要
 
 ## 安装
 
