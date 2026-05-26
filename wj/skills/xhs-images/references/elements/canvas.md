@@ -1,6 +1,6 @@
 # Canvas & Layout
 
-Core canvas specifications and layout grids for Xiaohongshu infographics.
+Core canvas specifications and layout grids for Xiaohongshu visual cards.
 
 ## Aspect Ratios
 

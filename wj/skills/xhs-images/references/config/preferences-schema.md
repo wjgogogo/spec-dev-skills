@@ -23,12 +23,6 @@ preferred_style:
 
 preferred_layout: null    # sparse|balanced|dense|list|comparison|flow|mindmap|quadrant
 
-# Infographic mode preferences
-infographic:
-  preferred_layout: null  # bento-grid|linear-progression|binary-comparison|...
-  preferred_style: null   # craft-handmade|claymation|kawaii|...
-  default_aspect: landscape  # landscape|portrait|square
-
 language: null            # zh|en|ja|ko|auto
 
 custom_styles:
@@ -55,9 +49,6 @@ custom_styles:
 | `preferred_style.name` | string | null | XHS style name or null |
 | `preferred_style.description` | string | "" | Custom notes/override |
 | `preferred_layout` | string | null | XHS layout preference or null |
-| `infographic.preferred_layout` | string | null | Infographic layout or null |
-| `infographic.preferred_style` | string | null | Infographic style or null |
-| `infographic.default_aspect` | string | landscape | Default aspect ratio |
 | `language` | string | null | Output language (null = auto-detect) |
 | `custom_styles` | array | [] | User-defined styles |
 
@@ -111,11 +102,6 @@ preferred_style:
   description: "Clean knowledge cards for tech content"
 
 preferred_layout: dense
-
-infographic:
-  preferred_layout: bento-grid
-  preferred_style: craft-handmade
-  default_aspect: landscape
 
 language: zh
 

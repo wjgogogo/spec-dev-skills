@@ -1,6 +1,6 @@
 # Typography System
 
-Text styling elements for Xiaohongshu infographics.
+Text styling elements for Xiaohongshu visual cards.
 
 ## Decorated Text (花字)
 

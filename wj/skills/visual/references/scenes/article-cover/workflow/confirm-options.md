@@ -127,7 +127,7 @@ options:
   - label: "same-dir / [auto-text] / [auto-mood] / [preset-aspect]"
     description: "{article-dir}/, same directory as article"
   - label: "independent / [auto-text] / [auto-mood] / [preset-aspect]"
-    description: "cover-image/{topic-slug}/, separate from article"
+    description: "visual/{topic-slug}/, separate from article"
 ```
 
 **When output dir already set** (preference exists or pasted content):

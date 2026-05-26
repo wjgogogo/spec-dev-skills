@@ -1,6 +1,6 @@
 # Decorative Assets
 
-Visual embellishments and decorative elements for Xiaohongshu infographics.
+Visual embellishments and decorative elements for Xiaohongshu visual cards.
 
 ## Emphasis Marks (强调标记)
 

@@ -4,7 +4,7 @@ Deep analysis framework tailored for Xiaohongshu's unique engagement patterns.
 
 ## Purpose
 
-Before creating infographics, thoroughly analyze the source material to:
+Before creating XHS visual cards, thoroughly analyze the source material to:
 - Maximize hook power and swipe motivation
 - Identify save-worthy and share-worthy elements
 - Plan the visual narrative arc

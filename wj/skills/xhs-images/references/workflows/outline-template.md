@@ -1,6 +1,6 @@
 # Xiaohongshu Outline Template
 
-Template for generating infographic series outlines with layout specifications.
+Template for generating XHS image series outlines with layout specifications.
 
 ## File Naming
 

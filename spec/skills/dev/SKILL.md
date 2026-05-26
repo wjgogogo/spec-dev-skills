@@ -91,7 +91,7 @@ description: 当用户希望根据已有规格文档推进实现、说"开始开
 **输出格式**：严格按照 `templates/task.md` 模板结构
 
 **操作**：
-1. 确定模板文件路径：使用插件内置模板 `${CLAUDE_PLUGIN_ROOT}/templates/task.md`
+1. 确定模板文件路径：使用 skill 同包内置模板 `../../templates/task.md`（相对于本 SKILL.md）
 2. 基于规格文档和代码库探索发现，生成详细实现计划
 3. 将实现计划保存到 `.claude/tasks/[功能名称].md`：
    ```bash

@@ -39,14 +39,14 @@
 | :---------------------------------------------------- | :------------------ | :----------------------------------------------------------------- |
 | [`/wj-commit`](wj/skills/commit/SKILL.md)             | 提交代码            | 标准化 Git 提交流程，生成 Conventional Commits 格式                |
 | [`/wj-write`](wj/skills/write/SKILL.md)               | 润色文档            | 中文技术文档润色，修正排版，可选去 AI 腔和作者风格改写             |
-| [`/wj-cover-image`](wj/skills/cover-image/SKILL.md)   | 生成封面图          | 5 维定制（type/palette/rendering/text/mood），支持风格预设和参考图 |
-| [`/wj-xhs-images`](wj/skills/xhs-images/SKILL.md)     | 小红书图文 / 信息图 | XHS 模式生成 1-10 张系列图；Infographic 模式生成单张专业信息图     |
+| [`/wj-visual`](wj/skills/visual/SKILL.md)             | 单图生成器          | 多场景路由：article-cover（5 维定制）/ infographic（21 layout × 20 style） |
+| [`/wj-xhs-images`](wj/skills/xhs-images/SKILL.md)     | 小红书系列图        | 内容拆分为 1-10 张卡通风格系列图，链式 ref 保持视觉一致            |
 | [`/wj-imagine`](wj/skills/imagine/SKILL.md)           | 生成 AI 图片        | 底层生图引擎，支持批量并行、参考图、多种画质和宽高比               |
 | [`/wj-excalidraw`](wj/skills/excalidraw/SKILL.md)     | 画技术图            | 生成手绘风格的 Excalidraw 技术示意图，4 种预设风格                 |
 | [`/wj-handoff`](wj/skills/handoff/SKILL.md)           | 会话结束            | 生成结构化交接文档，为下一个 agent 或人类留下可继续的上下文        |
 | [`/wj-self-improve`](wj/skills/self-improve/SKILL.md) | 沉淀项目规范        | 将反复出现的纠正沉淀为 CLAUDE.md 项目级规则                        |
 
-生图类 skill 的关系：`wj-cover-image` 和 `wj-xhs-images` 是上层业务 skill，底层统一调用 `wj-imagine` 生成图片。
+生图类 skill 的关系：`wj-visual`（单图）和 `wj-xhs-images`（多图系列）是上层业务 skill，底层统一调用 `wj-imagine` 生成图片。
 
 ## 安装
 

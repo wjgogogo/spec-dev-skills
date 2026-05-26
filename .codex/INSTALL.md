@@ -74,7 +74,7 @@
 - **handoff** - 任务交接
 - **excalidraw** - Excalidraw 图表生成
 - **imagine** - AI 图片生成
-- **cover-image** - 封面图片生成
+- **visual** - 单图生成（封面 / 信息图 / 海报 / 架构图 / 学术配图 / 插画）
 - **xhs-images** - 小红书图文生成
 - **self-improve** - 技能自我改进
 

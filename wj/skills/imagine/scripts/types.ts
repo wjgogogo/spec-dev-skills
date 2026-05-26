@@ -2,11 +2,22 @@ export type Quality = "normal" | "2k";
 
 export type GeminiModel = "gemini-3.1-flash-image-preview";
 
+export type OpenAIImageModel =
+  | "gpt-image-2"
+  | "gpt-image-2-2026-04-21"
+  | "gpt-image-1"
+  | "gpt-image-1.5"
+  | "gpt-image-1-mini";
+
+export type ImageModel = GeminiModel | OpenAIImageModel;
+
+export type Provider = "openai" | "gemini";
+
 export type CliArgs = {
   prompt: string | null;
   promptFiles: string[];
   imagePath: string | null;
-  model: GeminiModel | null;
+  model: ImageModel | null;
   aspectRatio: string | null;
   quality: Quality | null;
   referenceImages: string[];

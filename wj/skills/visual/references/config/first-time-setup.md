@@ -1,6 +1,6 @@
 ---
 name: first-time-setup
-description: First-time setup flow for cover-image preferences
+description: First-time setup flow for visual preferences
 ---
 
 # First-Time Setup
@@ -124,7 +124,7 @@ header: "Output"
 question: "Default output directory for cover images?"
 options:
   - label: "Independent (Recommended)"
-    description: "cover-image/{topic-slug}/ - separate from article"
+    description: "visual/{topic-slug}/ - separate from article"
   - label: "Same directory"
     description: "{article-dir}/ - alongside the article file"
   - label: "imgs subdirectory"
@@ -159,8 +159,8 @@ options:
 
 | Choice | Path | Scope |
 |--------|------|-------|
-| Project | `.wj-skills/cover-image/EXTEND.md` | Current project |
-| User | `~/.wj-skills/cover-image/EXTEND.md` | All projects |
+| Project | `.wj-skills/visual/EXTEND.md` | Current project |
+| User | `~/.wj-skills/visual/EXTEND.md` | All projects |
 
 ## After Setup
 

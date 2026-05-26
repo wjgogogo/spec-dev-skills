@@ -1,6 +1,6 @@
 ---
 name: watermark-guide
-description: Watermark configuration guide for cover-image
+description: Watermark configuration guide for visual
 ---
 
 # Watermark Guide

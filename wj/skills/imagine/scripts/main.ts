@@ -8,23 +8,41 @@ import type {
   BatchTaskInput,
   CliArgs,
   ExtendConfig,
-  GeminiModel,
+  ImageModel,
+  OpenAIImageModel,
+  Provider,
 } from "./types";
-import { generateImage } from "./providers/gemini";
 
-const DEFAULT_MODEL: GeminiModel = "gemini-3.1-flash-image-preview";
+const DEFAULT_MODEL: ImageModel = "gpt-image-2";
+
+function detectProvider(model: ImageModel): Provider {
+  return model.startsWith("gpt-image") ? "openai" : "gemini";
+}
+
+async function dispatchGenerate(
+  prompt: string,
+  model: ImageModel,
+  args: CliArgs,
+): Promise<Uint8Array> {
+  if (detectProvider(model) === "openai") {
+    const mod = await import("./providers/openai");
+    return mod.generateImage(prompt, model as OpenAIImageModel, args);
+  }
+  const mod = await import("./providers/gemini");
+  return mod.generateImage(prompt, model as "gemini-3.1-flash-image-preview", args);
+}
 
 type PreparedTask = {
   id: string;
   prompt: string;
   args: CliArgs;
-  model: GeminiModel;
+  model: ImageModel;
   outputPath: string;
 };
 
 type TaskResult = {
   id: string;
-  model: GeminiModel;
+  model: ImageModel;
   outputPath: string;
   success: boolean;
   attempts: number;
@@ -62,15 +80,20 @@ Options:
   --image <path>            Output image path (required in single-image mode)
   --batchfile <path>        JSON batch file for multi-image generation
   --jobs <count>            Worker count for batch mode (default: auto, max from config, built-in default 10)
-  -m, --model <id>          Gemini model (default: gemini-3.1-flash-image-preview)
+  -m, --model <id>          Model id (default: gpt-image-2). Provider is auto-detected:
+                              gpt-image-*  -> OpenAI Images API
+                              gemini-*     -> Google Gemini
   --ar <ratio>              Aspect ratio (e.g., 16:9, 1:1, 4:3)
   --quality normal|2k       Quality preset (default: 2k)
-  --ref <files...>          Reference images
+  --ref <files...>          Reference images (OpenAI uses /v1/images/edits)
   --n <count>               Number of images for the current task (default: 1)
   --json                    JSON output
   -h, --help                Show help
 
-Model: gemini-3.1-flash-image-preview
+Default model: gpt-image-2
+Supported models:
+  OpenAI: gpt-image-2, gpt-image-2-2026-04-21, gpt-image-1.5, gpt-image-1, gpt-image-1-mini
+  Gemini: gemini-3.1-flash-image-preview
 
 Batch file format:
   {
@@ -91,7 +114,8 @@ Behavior:
   - Batch summary reports success count, failure count, and per-image errors
 
 Environment variables:
-  GEMINI_API_KEY            Gemini API key
+  OPENAI_API_KEY            OpenAI API key (required for gpt-image-* models)
+  GEMINI_API_KEY            Gemini API key (required for gemini-* models)
 
 Env file load order: CLI args > EXTEND.md > process.env > <cwd>/.wj-skills/.env > ~/.wj-skills/.env`);
 }
@@ -179,7 +203,7 @@ export function parseArgs(argv: string[]): CliArgs {
     if (a === "--model" || a === "-m") {
       const v = argv[++i];
       if (!v) throw new Error(`Missing value for ${a}`);
-      out.model = v as GeminiModel;
+      out.model = v as ImageModel;
       continue;
     }
 
@@ -434,7 +458,10 @@ export function isRetryableGenerationError(error: unknown): boolean {
     "is required",
     "Invalid ",
     "Unexpected ",
+    "Cannot find package",
+    "Cannot find module",
     "GEMINI_API_KEY",
+    "OPENAI_API_KEY",
     "PERMISSION_DENIED",
     "INVALID_ARGUMENT",
     "NOT_FOUND",
@@ -451,7 +478,7 @@ async function loadPromptForArgs(args: CliArgs): Promise<string | null> {
   return prompt;
 }
 
-function resolveModel(requested: GeminiModel | null): GeminiModel {
+function resolveModel(requested: ImageModel | null): ImageModel {
   return requested ?? DEFAULT_MODEL;
 }
 
@@ -547,13 +574,14 @@ async function writeImage(outputPath: string, imageData: Uint8Array): Promise<vo
 }
 
 async function generatePreparedTask(task: PreparedTask): Promise<TaskResult> {
-  console.error(`使用 gemini / ${task.model} (${task.id})`);
+  const provider = detectProvider(task.model);
+  console.error(`使用 ${provider} / ${task.model} (${task.id})`);
 
   let attempts = 0;
   while (attempts < MAX_ATTEMPTS) {
     attempts += 1;
     try {
-      const imageData = await generateImage(task.prompt, task.model, task.args);
+      const imageData = await dispatchGenerate(task.prompt, task.model, task.args);
       await writeImage(task.outputPath, imageData);
       return {
         id: task.id,
@@ -631,7 +659,7 @@ async function runBatchTasks(
   const acquire = createRateGate(rateLimit);
   const workerCount = getWorkerCount(tasks.length, jobs, maxWorkers);
   console.error(`Batch mode: ${tasks.length} tasks, ${workerCount} workers, parallel mode enabled.`);
-  console.error(`- gemini: concurrency=${rateLimit.concurrency}, startIntervalMs=${rateLimit.startIntervalMs}`);
+  console.error(`- rate limit: concurrency=${rateLimit.concurrency}, startIntervalMs=${rateLimit.startIntervalMs}`);
 
   let nextIndex = 0;
   const results: TaskResult[] = new Array(tasks.length);

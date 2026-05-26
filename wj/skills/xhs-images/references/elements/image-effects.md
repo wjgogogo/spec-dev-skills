@@ -1,6 +1,6 @@
 # Image Processing Layer
 
-Visual effects applied to image elements in Xiaohongshu infographics.
+Visual effects applied to image elements in Xiaohongshu visual cards.
 
 ## AI Cutout (抠图)
 

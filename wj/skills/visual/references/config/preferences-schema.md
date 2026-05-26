@@ -1,6 +1,6 @@
 ---
 name: preferences-schema
-description: EXTEND.md YAML schema for cover-image user preferences
+description: EXTEND.md YAML schema for visual user preferences
 ---
 
 # Preferences Schema
