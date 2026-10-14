@@ -71,6 +71,7 @@
 
 - **commit** - Git 提交消息生成
 - **write** - 文档润色与排版优化
+- **refactoring-ui** - 界面设计与评审，改善视觉层级、布局、排版和配色
 - **handoff** - 任务交接
 - **excalidraw** - Excalidraw 图表生成
 - **imagine** - AI 图片生成

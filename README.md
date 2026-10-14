@@ -33,12 +33,13 @@
 
 ## WJ Skills
 
-日常工程效率工具集，8 个 skill 各司其职。
+日常工程效率工具集，9 个 skill 各司其职。
 
 | Skill                                                 | 触发时机            | 做什么                                                             |
 | :---------------------------------------------------- | :------------------ | :----------------------------------------------------------------- |
 | [`/wj-commit`](wj/skills/commit/SKILL.md)             | 提交代码            | 标准化 Git 提交流程，生成 Conventional Commits 格式                |
 | [`/wj-write`](wj/skills/write/SKILL.md)               | 润色文档            | 中文技术文档润色，修正排版，可选去 AI 腔和作者风格改写             |
+| [`/wj-refactoring-ui`](wj/skills/refactoring-ui/SKILL.md) | 界面设计与评审 | 按 Refactoring UI 准则改善视觉层级、布局、排版和配色 |
 | [`/wj-visual`](wj/skills/visual/SKILL.md)             | 单图生成器          | 多场景路由：article-cover（5 维定制）/ infographic（21 layout × 20 style） |
 | [`/wj-xhs-images`](wj/skills/xhs-images/SKILL.md)     | 小红书系列图        | 内容拆分为 1-10 张卡通风格系列图，链式 ref 保持视觉一致            |
 | [`/wj-imagine`](wj/skills/imagine/SKILL.md)           | 生成 AI 图片        | 底层生图引擎，支持批量并行、参考图、多种画质和宽高比               |

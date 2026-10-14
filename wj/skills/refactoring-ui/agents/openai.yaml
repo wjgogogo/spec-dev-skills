@@ -1,0 +1,4 @@
+interface:
+  display_name: "Refactoring UI 界面设计与评审"
+  short_description: "用视觉层级、间距、排版与配色改进界面，保留既有风格和可用性"
+  default_prompt: "使用 $wj-refactoring-ui，根据用户任务和现有设计系统分析这个界面，优先处理视觉层级、分组和阅读体验；按我的请求给出评审或完成改进与验证。"
